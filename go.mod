@@ -1,6 +1,6 @@
 module github.com/prom3t3us/turbocookedrabbit
 
-go 1.14
+go 1.13
 
 require (
 	github.com/Workiva/go-datastructures v1.0.52

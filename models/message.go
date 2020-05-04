@@ -28,25 +28,25 @@ func (not *Notification) ToString() string {
 // Message allow for you to acknowledge, after processing the payload, by its RabbitMQ tag and Channel pointer.
 type Message struct {
 	IsAckable   bool
+	Headers     map[string]interface{}
 	Body        []byte
 	deliveryTag uint64
-	messageID   string
 	amqpChan    *amqp.Channel
 }
 
 // NewMessage creates a new Message.
 func NewMessage(
 	isAckable bool,
+	headers map[string]interface{},
 	body []byte,
 	deliveryTag uint64,
-	messageID string,
 	amqpChan *amqp.Channel) *Message {
 
 	return &Message{
 		IsAckable:   isAckable,
+		Headers:     headers,
 		Body:        body,
 		deliveryTag: deliveryTag,
-		messageID:   messageID,
 		amqpChan:    amqpChan,
 	}
 }
@@ -92,10 +92,6 @@ func (msg *Message) Reject(requeue bool) error {
 	}
 
 	return msg.amqpChan.Reject(msg.deliveryTag, requeue)
-}
-
-func (msg *Message) MessageId() string {
-	return msg.messageID
 }
 
 // ErrorMessage allow for you to replay a message that was returned.

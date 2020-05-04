@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/houseofcat/turbocookedrabbit/models"
-	"github.com/houseofcat/turbocookedrabbit/pools"
+	"github.com/prom3t3us/turbocookedrabbit/models"
+	"github.com/prom3t3us/turbocookedrabbit/pools"
 	"github.com/streadway/amqp"
 )
 

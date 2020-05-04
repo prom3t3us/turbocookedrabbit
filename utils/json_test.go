@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/houseofcat/turbocookedrabbit/models"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/prom3t3us/turbocookedrabbit/models"
 	"github.com/stretchr/testify/assert"
 )
 

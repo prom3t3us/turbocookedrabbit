@@ -10,8 +10,8 @@ import (
 
 	"github.com/Workiva/go-datastructures/queue"
 
-	"github.com/houseofcat/turbocookedrabbit/models"
-	"github.com/houseofcat/turbocookedrabbit/utils"
+	"github.com/prom3t3us/turbocookedrabbit/models"
+	"github.com/prom3t3us/turbocookedrabbit/utils"
 )
 
 // ConnectionPool houses the pool of RabbitMQ connections.

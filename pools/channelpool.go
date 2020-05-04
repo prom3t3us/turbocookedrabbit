@@ -8,7 +8,7 @@ import (
 
 	"github.com/Workiva/go-datastructures/queue"
 
-	"github.com/houseofcat/turbocookedrabbit/models"
+	"github.com/prom3t3us/turbocookedrabbit/models"
 )
 
 // TODO: Investigate the value of Sync.Map instead of map + lock for FlaggedChannels.

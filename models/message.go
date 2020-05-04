@@ -94,6 +94,10 @@ func (msg *Message) Reject(requeue bool) error {
 	return msg.amqpChan.Reject(msg.deliveryTag, requeue)
 }
 
+func (msg *Message) MessageId() string {
+	return msg.messageID
+}
+
 // ErrorMessage allow for you to replay a message that was returned.
 type ErrorMessage struct {
 	Code    int

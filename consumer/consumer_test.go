@@ -10,11 +10,11 @@ import (
 	"github.com/fortytw2/leaktest"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/houseofcat/turbocookedrabbit/consumer"
-	"github.com/houseofcat/turbocookedrabbit/models"
-	"github.com/houseofcat/turbocookedrabbit/pools"
-	"github.com/houseofcat/turbocookedrabbit/publisher"
-	"github.com/houseofcat/turbocookedrabbit/utils"
+	"github.com/prom3t3us/turbocookedrabbit/consumer"
+	"github.com/prom3t3us/turbocookedrabbit/models"
+	"github.com/prom3t3us/turbocookedrabbit/pools"
+	"github.com/prom3t3us/turbocookedrabbit/publisher"
+	"github.com/prom3t3us/turbocookedrabbit/utils"
 )
 
 var Seasoning *models.RabbitSeasoning

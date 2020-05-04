@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/fortytw2/leaktest"
-	"github.com/houseofcat/turbocookedrabbit/models"
-	"github.com/houseofcat/turbocookedrabbit/utils"
+	"github.com/prom3t3us/turbocookedrabbit/models"
+	"github.com/prom3t3us/turbocookedrabbit/utils"
 	"github.com/stretchr/testify/assert"
 )
 

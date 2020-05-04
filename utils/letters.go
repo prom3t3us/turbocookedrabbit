@@ -5,7 +5,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/houseofcat/turbocookedrabbit/models"
+	"github.com/prom3t3us/turbocookedrabbit/models"
 )
 
 var globalLetterID uint64

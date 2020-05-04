@@ -150,9 +150,9 @@ func (con *Consumer) Get(queueName string, autoAck bool) (*models.Message, error
 	if ok {
 		return models.NewMessage(
 			!autoAck,
+			amqpDelivery.Headers,
 			amqpDelivery.Body,
 			amqpDelivery.DeliveryTag,
-			amqpDelivery.MessageId,
 			chanHost.Channel), nil
 	}
 	con.channelPool.ReturnChannel(chanHost, false)
@@ -201,9 +201,9 @@ GetBatchLoop:
 
 		messages = append(messages, models.NewMessage(
 			!autoAck,
+			amqpDelivery.Headers,
 			amqpDelivery.Body,
 			amqpDelivery.DeliveryTag,
-			amqpDelivery.MessageId,
 			chanHost.Channel))
 	}
 
@@ -394,9 +394,9 @@ func (con *Consumer) Errors() <-chan error {
 func (con *Consumer) convertDelivery(amqpChan *amqp.Channel, delivery *amqp.Delivery, isAckable bool) {
 	msg := models.NewMessage(
 		isAckable,
+		delivery.Headers,
 		delivery.Body,
 		delivery.DeliveryTag,
-		delivery.MessageId,
 		amqpChan)
 
 	go func() {

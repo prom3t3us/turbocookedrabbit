@@ -28,7 +28,7 @@ func (not *Notification) ToString() string {
 // Message allow for you to acknowledge, after processing the payload, by its RabbitMQ tag and Channel pointer.
 type Message struct {
 	IsAckable   bool
-	Headers     map[string]interface{}
+	Headers     amqp.Table
 	Body        []byte
 	deliveryTag uint64
 	amqpChan    *amqp.Channel
@@ -37,7 +37,7 @@ type Message struct {
 // NewMessage creates a new Message.
 func NewMessage(
 	isAckable bool,
-	headers map[string]interface{},
+	headers amqp.Table,
 	body []byte,
 	deliveryTag uint64,
 	amqpChan *amqp.Channel) *Message {

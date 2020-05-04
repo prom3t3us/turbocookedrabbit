@@ -30,6 +30,7 @@ type Message struct {
 	IsAckable   bool
 	Body        []byte
 	deliveryTag uint64
+	messageID   string
 	amqpChan    *amqp.Channel
 }
 
@@ -38,12 +39,14 @@ func NewMessage(
 	isAckable bool,
 	body []byte,
 	deliveryTag uint64,
+	messageID string,
 	amqpChan *amqp.Channel) *Message {
 
 	return &Message{
 		IsAckable:   isAckable,
 		Body:        body,
 		deliveryTag: deliveryTag,
+		messageID:   messageID,
 		amqpChan:    amqpChan,
 	}
 }

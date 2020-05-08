@@ -42,9 +42,14 @@ func NewMessage(
 	deliveryTag uint64,
 	amqpChan *amqp.Channel) *Message {
 
+	h := amqp.Table{}
+	for k, v := range headers {
+		h[k] = v
+	}
+
 	return &Message{
 		IsAckable:   isAckable,
-		Headers:     headers,
+		Headers:     h,
 		Body:        body,
 		deliveryTag: deliveryTag,
 		amqpChan:    amqpChan,
